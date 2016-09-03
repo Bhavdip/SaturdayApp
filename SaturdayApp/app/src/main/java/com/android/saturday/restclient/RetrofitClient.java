@@ -41,8 +41,7 @@ public class RetrofitClient {
 
     private void buildRestAdapter() {
         if (mRetrofitBuilder == null) {
-            OkHttpClient okHttpClient = new OkHttpClient();
-            okHttpClient.interceptors().add(new LoggingInterceptor());
+            OkHttpClient okHttpClient = new OkHttpClient().newBuilder().addInterceptor(new LoggingInterceptor()).build();
             mRetrofitBuilder = new Retrofit.Builder()
                     .baseUrl(AppConfiguration.getBaseHost())
                     .client(okHttpClient)

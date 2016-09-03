@@ -4,9 +4,12 @@ import com.android.saturday.restclient.pojo.ImagesDao;
 
 import java.util.Map;
 
+import retrofit2.Call;
 import retrofit2.http.FieldMap;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
+import retrofit2.http.Headers;
+import retrofit2.http.Query;
 import rx.Observable;
 
 /**
@@ -14,7 +17,9 @@ import rx.Observable;
  */
 public interface GettyImagesAPI {
 
-    @FormUrlEncoded
-    @GET("v3/search/images?phrase=google")
-    Observable<ImagesDao> searchGettyImages(@FieldMap Map<String, Object> params);
+    @GET("/v3/search/images")
+    Observable<ImagesDao> searchGettyImages(@Query("phrase") String phase);
+
+    @GET("/v3/search/images?phrase=google")
+    Call<ImagesDao> searchGettyImages2();
 }

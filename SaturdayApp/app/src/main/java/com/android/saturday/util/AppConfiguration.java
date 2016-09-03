@@ -6,7 +6,7 @@ package com.android.saturday.util;
 public class AppConfiguration {
 
     private final static String APP_LOG = "GettyImages";
-    private final static String BASE_URL = "https://api.gettyimages.com/";
+    private final static String BASE_URL = "https://api.gettyimages.com";
 
     private AppConfiguration() {
     }

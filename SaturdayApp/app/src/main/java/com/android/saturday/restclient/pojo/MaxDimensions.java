@@ -3,7 +3,7 @@ package com.android.saturday.restclient.pojo;
 
 import java.util.HashMap;
 import java.util.Map;
-import javax.annotation.Generated;
+
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -12,10 +12,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@Generated("org.jsonschema2pojo")
 @JsonPropertyOrder({
-    "height",
-    "width"
+        "height",
+        "width"
 })
 public class MaxDimensions {
 
@@ -27,9 +26,7 @@ public class MaxDimensions {
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     /**
-     * 
-     * @return
-     *     The height
+     * @return The height
      */
     @JsonProperty("height")
     public Integer getHeight() {
@@ -37,9 +34,7 @@ public class MaxDimensions {
     }
 
     /**
-     * 
-     * @param height
-     *     The height
+     * @param height The height
      */
     @JsonProperty("height")
     public void setHeight(Integer height) {
@@ -47,9 +42,7 @@ public class MaxDimensions {
     }
 
     /**
-     * 
-     * @return
-     *     The width
+     * @return The width
      */
     @JsonProperty("width")
     public Integer getWidth() {
@@ -57,9 +50,7 @@ public class MaxDimensions {
     }
 
     /**
-     * 
-     * @param width
-     *     The width
+     * @param width The width
      */
     @JsonProperty("width")
     public void setWidth(Integer width) {

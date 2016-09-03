@@ -2,11 +2,14 @@ package com.android.saturday.restclient.handler;
 
 
 import android.text.TextUtils;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.orhanobut.logger.Logger;
+
 import java.io.IOException;
 import java.nio.charset.Charset;
-import retrofit.Response;
+
+import retrofit2.Response;
 
 public class ErrorHandler {
 

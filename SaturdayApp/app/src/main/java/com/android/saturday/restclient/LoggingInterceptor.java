@@ -44,7 +44,13 @@ public class LoggingInterceptor implements Interceptor {
         //append the into the builder
         httpLogger.append("Request--->").append("\n").append(requestLog);
 
-        response = chain.proceed(request);
+
+        // Request customization: add request headers
+        Request.Builder requestBuilder = request.newBuilder()
+                .header("Api-Key", "b9fvndswukvbndzchakwcyd9")
+                .method(request.method(), request.body());
+
+        response = chain.proceed(requestBuilder.build());
 
         // again keep the nano time when the response come back
         long t2 = System.nanoTime();
