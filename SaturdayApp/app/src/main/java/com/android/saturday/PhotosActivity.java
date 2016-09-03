@@ -41,7 +41,6 @@ public class PhotosActivity extends AppCompatActivity {
         defineHttpAdapter();
         setUpRecyclerView();
         startFetchingImages();
-//        startFetchingImages2();
     }
 
     private void defineHttpAdapter() {
@@ -83,22 +82,5 @@ public class PhotosActivity extends AppCompatActivity {
                         mImagesGridAdapter.notifyDataSetChanged();
                     }
                 });
-    }
-
-    private void startFetchingImages2() {
-        Call<ImagesDao> imagesDaoCall = mGettyImagesAPI.searchGettyImages2();
-        imagesDaoCall.enqueue(new Callback<ImagesDao>() {
-            @Override
-            public void onResponse(Call<ImagesDao> call, Response<ImagesDao> response) {
-                if (response != null) {
-                    Toast.makeText(PhotosActivity.this, response.message(), Toast.LENGTH_SHORT).show();
-                }
-            }
-
-            @Override
-            public void onFailure(Call<ImagesDao> call, Throwable t) {
-                t.printStackTrace();
-            }
-        });
     }
 }
